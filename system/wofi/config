@@ -1,0 +1,17 @@
+width=600[main]
+width = 600
+height = 400
+location = center
+prompt = ❯
+filter_rate = 100
+allow_markup = true
+always_parse_args = true
+show_all = false
+layer = top
+hide_scroll = false
+orientation = vertical
+insensitive = false
+allow_images = true
+image_size = 24
+dynamic_lines = true
+exec_search = false

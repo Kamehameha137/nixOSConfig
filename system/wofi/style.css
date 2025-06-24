@@ -1,0 +1,74 @@
+window {
+  background-color: rgba(22, 14, 23, 0.95);  /* background = 160e17 */
+  color: #d1c1d6;                            /* foreground = d1c1d6 */
+  border: 2px solid #7c5f83;                 /* regular4 = 7c5f83 */
+  border-radius: 12px;
+  font-family: "Fira Code", sans-serif;
+  font-size: 14px;
+}
+
+#input {
+  margin: 12px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  color: #e8e0ea;                            /* regular7 = e8e0ea */
+  background-color: rgba(34, 24, 36, 0.8);   /* regular0 = 221824 */
+  font-size: 16px;
+}
+
+#entry {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #d1c1d6;                            /* foreground */
+  background-color: transparent;
+}
+
+#entry:selected {
+  margin: 0px 15px 0px 15px; 
+  /* padding:0px 0px 0px 15px; */
+  background: linear-gradient(
+    90deg,
+    #5b4560 0%,                              /* regular3 = 5b4560 */
+    #7c5f83 100%                             /* regular4 = 7c5f83 */
+  );
+  color: #e8e0ea;                            /* regular7 */
+}
+
+#scroll {
+  margin: 4px;
+}
+
+#scrollbar {
+  background-color: rgba(44, 32, 47, 0.6);   /* regular1 = 2c202f */
+}
+
+#scrollbar slider {
+  background-color: #a281ab;                 /* regular5 = a281ab */
+  min-height: 20px;
+  border-radius: 4px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+window {
+  animation: fadeIn 0.2s ease-out;
+}
+
+#entry {
+  transition: all 0.5s ease;
+}
+
+/* Акцентные элементы */
+#preview-box {
+  background-color: rgba(44, 32, 47, 0.8);   /* regular1 = 2c202f */
+  border: 1px solid #5b4560;                  /* regular3 */
+}
+
+#preview-text {
+  color: #c3acc9;                            /* regular6 = c3acc9 */
+}

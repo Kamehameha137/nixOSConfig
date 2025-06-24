@@ -1,0 +1,117 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 45,
+  "margin-left": 16,
+  "margin-right": 16,
+  "margin-top": 15,   
+
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "tray",
+    "network",
+    "bluetooth"
+  ],
+
+  "modules-center": ["hyprland/window"],
+
+  "modules-right": [
+    "clock",
+    "pulseaudio",
+    "memory",
+    "cpu",
+
+    "custom/separator",
+
+    "custom/reboot",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate"
+  },
+  
+  "custom/separator": {
+    "format": " ",
+    "tooltip": false
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "on-click": "systemctl reboot",
+    "tooltip": true,
+    "tooltip-format": "Reboot system"
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "systemctl poweroff",
+    "tooltip": true,
+    "tooltip-format": "Shutdown"
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "  Wired",
+    "tooltip-format": "󰅧  {bandwidthUpBytes} 󰅢  {bandwidthDownBytes}",
+    "format-linked": "󱘖 {ifname} (No IP)",
+    "format-disconnected": " Disconnected",
+    "format-alt": "󰤨 {signalStrength}%",
+    "interval": 1
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 0%",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click-right": "pavucontrol -t 3",
+    "on-click": "pactl -- set-sink-mute 0 toggle",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%"
+  },
+
+  "memory": {
+    "format": "  {used:0.3f}G",
+    "tooltip": true,
+    "tooltip-format": "Memory used: {used:0.2f}G/{total:0.2f}G"
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true
+  },
+
+  "clock": {
+    "interval": 1,
+    "timezone": "Europe/Moscow",
+    "format": "  {:%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "Idi nahui"
+  },
+
+  "tray": {
+    "icon-size": 17,
+    "spacing": 6
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  }
+}
