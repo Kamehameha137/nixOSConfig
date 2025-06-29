@@ -52,8 +52,6 @@
   
 
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
 
   security.rtkit.enable = true;
 
@@ -76,16 +74,6 @@
     enable = true;
     xwayland.enable = true;
   };
-  
-  programs.steam = {
-     enable = true;
-     remotePlay.openFirewall = true;
-     dedicatedServer.openFirewall = true;
-     localNetworkGameTransfers.openFirewall = true;
-     gamescopeSession.enable = true;
-  };
-
-  programs.gamemode.enable = true;    
 
   hardware.opengl = {
     enable = true;
@@ -139,18 +127,8 @@
    chromium firefox vscode discord ayugram-desktop protonup  
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "ruslan" ];
-
-
    nixpkgs.config.allowUnfree = true;
   
- # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
- #   "steam"
- #   "steam-original"
- #   "steam-unwrapped"
- #   "steam-run"
- # ];  
 
   system.stateVersion = "25.05"; 
 }
