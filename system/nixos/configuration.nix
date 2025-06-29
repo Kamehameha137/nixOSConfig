@@ -7,12 +7,9 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  #Bootloader
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
-    useOSProber = true;
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
 
   networking = {
     hostName = "nixos"; # Define your hostname.
@@ -126,7 +123,7 @@
    nix-index
 
    #apps
-   chromium firefox vscode discord ayugram-desktop protonup  
+   chromium firefox vscode ayugram-desktop protonup  
   ];
 
    nixpkgs.config.allowUnfree = true;
