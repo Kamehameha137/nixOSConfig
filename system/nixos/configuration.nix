@@ -34,14 +34,13 @@
       LC_TELEPHONE = "ru_RU.UTF-8";
       LC_TIME = "ru_RU.UTF-8";
     };
-  }; 
- 
-  services.xserver = {
-    enable = true;
-    xkb.layout = "us,ru";
-    xkb.options = "grp:win_space_toggle";
-    videoDrivers = [ "amdgpu" ];
-  }; 
+  };
+
+  i18n.inputMethod = {
+      enabled = "fcitx5";
+      fcitx5.addons = with pkgs; [ fcitx5-mozc fcitx5-rime ];
+  };
+
 
   environment.sessionVariables = {
     XKB_DEFAULT_LAYOUT = "us,ru";
@@ -51,7 +50,10 @@
   };
   
 
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;  # Для Wayland-сессий
+  };
 
   security.rtkit.enable = true;
 
@@ -94,9 +96,11 @@
 
    #terminals
    foot
+   kitty
+   ghostty
 
    #GUI
-   wofi dunst libnotify
+   rofi mako libnotify
 
    #Monitoring
    fastfetch
@@ -107,13 +111,11 @@
    hyprpaper
    waybar  
    cava  
-   pulseaudio  
    fcitx5
    fcitx5-configtool  
 
    #FilesWork
    ranger
-   nautilus
    nemo
    dbus   
 
