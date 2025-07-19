@@ -82,8 +82,11 @@
   fonts.packages = with pkgs; [
     nerd-fonts._0xproto
     nerd-fonts.droid-sans-mono
-    fira-code
     nerd-fonts.tinos
+    nerd-fonts.jetbrains-mono
+    fira-code
+    hack-font
+    anonymousPro
   ];
 
   
