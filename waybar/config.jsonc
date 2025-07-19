@@ -1,10 +1,10 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 45,
   "margin-left": 16,
   "margin-right": 16,
-  "margin-top": 15,   
+  "margin-top": 10,
+  "margin-bottom": 13,   
 
 
   "modules-left": [
@@ -14,7 +14,11 @@
     "bluetooth"
   ],
 
-  "modules-center": ["hyprland/window"],
+  "modules-center": [
+    "cava",
+    "hyprland/window",
+    "cava"
+  ],
 
   "modules-right": [
     "clock",
@@ -33,6 +37,15 @@
     "all-outputs": true,
     "format": "{icon}",
     "on-click": "activate"
+  },
+
+  "cava": {
+    "exec": "{cava -p ~/.config/cava/config}",
+    "format-icons": [" ", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "format": "{}",
+    "tooltip": false,
+    "method": "pipewire",
+    "input_delay": 2
   },
   
   "custom/separator": {
